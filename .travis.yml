@@ -6,18 +6,19 @@ before_script:
 - npm i express
 - npm i cors
 
-scripts:
-  start: npm start
-
 branches:
   only: 
     - main
 
 notifications:
   email: false
+
+deploy:
+  provider: script
+  script: node server.js
   
 deploy:
-  provider: heroku
+  provider: github
   app: parkfinder-api
   skip_cleanup: true
   api_key:
