@@ -1,7 +1,8 @@
-const express = require('express')
-const app = express()
-const cors = require('cors')
+import express from 'express'
+import cors from 'cors'
 import parkData from './parkData'
+
+const app = express()
 
 app.set('port', process.env.PORT || 4000)
 app.use(express.json())
@@ -15,15 +16,11 @@ app.listen(app.get('port'), () => {
 })
 
 app.get('/', (request, response) => {
-  response.send(app.locals.title)
-})
-
-app.get('/nationalParks', (request, response) => {
   const nationalParks = app.locals.nationalParks
   response.json({ nationalParks })
 })
 
-app.get('/nationalParks/:parkCode', (request, response) => {
+app.get('/:parkCode', (request, response) => {
   const { parkCode } = request.params
   const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
   
@@ -34,7 +31,7 @@ app.get('/nationalParks/:parkCode', (request, response) => {
   response.status(200).json(park)
 })
 
-app.get('/nationalParks/:parkCode/reviews', (request, response) => {
+app.get('/:parkCode/reviews', (request, response) => {
   const { parkCode } = request.params
   const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
 
@@ -45,7 +42,7 @@ app.get('/nationalParks/:parkCode/reviews', (request, response) => {
   response.status(200).json(park.reviews)
 })
 
-app.post('/nationalParks/:parkCode/reviews', (request, response) => {
+app.post('/:parkCode/reviews', (request, response) => {
   const { parkCode } = request.params
   const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
   const id = Date.now()
