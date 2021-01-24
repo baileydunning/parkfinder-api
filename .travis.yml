@@ -1,0 +1,11 @@
+"scripts": {
+  "start": "nodemon --exec babel-node server.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
+
+language: node_js
+node_js:
+  - "node"
+
+notifications:
+  email: false
