@@ -57,6 +57,6 @@ app.post('/:parkCode/reviews', (request, response) => {
   }
 
     const { name, parkReview } = review
-    app.locals.nationalParks[parkCode].reviews.push({ id, name, parkReview })
+    park.reviews.push({ id, name, parkReview })
     response.status(200).json(`Thanks for submitting a review for ${park.name}!`)
 })
