@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import parkData from './parkData'
+import { parkData } from './parkData'
 
 const app = express()
 
