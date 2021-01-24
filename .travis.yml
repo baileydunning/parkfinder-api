@@ -11,5 +11,6 @@ notifications:
 deploy:
   provider: heroku
   app: parkfinder-api
+  skip_cleanup: true
   api_key:
     secure: Sdw68/2C5vhLSgko8QKL3VLj0xgFsdnO14BX/vb/cdQxLmt4gbr9WcUz6k8rK/+ciA58spjsUhxmBkZ51xJKXWCNWaaTkP5OR+BJ72wLmKYeW0N2J+Er48vMN9zv5p0eXVY1FDCaI7hSBWMD8MUNzO8L86SnFhO6Azo+8i2rViD01tHix/a0sJV40Fwe5SyP2v8Fksoq/XM8XHraLDBtOm98/gWbHBJHvs1viuxFD2NKw+XFwLRR4htF4iH+W/tCaE7+ptbzEV2DXQ6opQqBG78aJLYf+Nt42uIrjX05srRFFYvs8NaBxBOcSZHg2W2zY8m4bShrGNXHf6VsEi7rVuYxPZF1qg0s2bCozAQVu05p+gbrIolPpAZor4WzxEMi891RqUkak9+2/S1g4X3Ic6rQvXJe1kfte5faLhndiijB5TjwVG/3KaV8JGuVkVUbmv++WcD/dK7rKmKafUrCOcE/t8IawhjlTWGEsvEI/fLg/yoOUKB/tBP1pq4bXwC1uU3n2P+o/HNvlGmEjeqPuIF3vYKNx44p0my4pRfBf/sWx2SHuAD+MXT63/t2Jgc/7wEp0e0Sa621DN5LrtaoSY9C1anpxk7fZk+WPcXP7+jpBImrKq78LmBt4TyvSSplLJQV2S4XFmsYisoCcHbEuCm1m0RkcjeOTJtByzQTrs4=
