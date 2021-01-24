@@ -6,10 +6,6 @@ before_script:
 - npm i express
 - npm i cors
 
-branches:
-  only: 
-    - main
-
 notifications:
   email: false
 
