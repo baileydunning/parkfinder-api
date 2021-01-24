@@ -26,6 +26,10 @@ app.get('/nationalParks', (request, response) => {
 app.get('/nationalParks/:parkCode', (request, response) => {
   const { parkCode } = request.params
   const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+  
+  if (!park) {
+    return response.sendStatus(404)
+  }
 
   response.status(200).json(park)
 })
