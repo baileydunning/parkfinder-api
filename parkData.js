@@ -19,7 +19,9 @@ const parkData = {
       state: 'SD',
       image: 'https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1047&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F39%2F2019%2F05%2F20222218%2F1-YellowMounds.jpg',
       parkCode: 'badl',
-      reviews: []
+      reviews: [
+        {id: 1, name: 'bailey', parkReview: '10/10 would recommend'}
+      ]
     },
     {
       name: 'Big Bend',

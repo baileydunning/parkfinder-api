@@ -33,3 +33,33 @@ app.get('/nationalParks/:parkCode', (request, response) => {
 
   response.status(200).json(park)
 })
+
+app.get('/nationalParks/:parkCode/reviews', (request, response) => {
+  const { parkCode } = request.params
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+
+  if (!park) {
+    return response.sendStatus(404)
+  }
+
+  response.status(200).json(park.reviews)
+})
+
+app.post('/nationalParks/:parkCode/reviews', (request, response) => {
+  const { parkCode } = request.params
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+  const id = Date.now()
+  const review = request.body
+
+  for (let requiredParameter of ['name', 'parkReview']) {
+    if (!review[requiredParameter]) {
+      response
+        .status(422)
+        .send({ error: `Expected format: { name: <String>, parkReview: <String> }. You're missing a "${requiredParameter}" property.` });
+    }
+  }
+
+    const { name, parkReview } = review
+    app.locals.nationalParks[parkCode].reviews.push({ id, name, parkReview })
+    response.status(200).json(`Thanks for submitting a review for ${park.name}!`)
+})
