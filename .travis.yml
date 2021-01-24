@@ -1,5 +1,5 @@
 scripts:
-  start: nodemon --exec babel-node server.js
+  start: 'node server.js'
   test: 'echo "Error: no test specified" && exit 1'
 install:
 - npm install
