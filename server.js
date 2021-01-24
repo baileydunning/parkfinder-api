@@ -1,6 +1,6 @@
-import express from 'express'
-import cors from 'cors'
-import { parkData } from './parkData'
+const express = require('express')
+const cors = require('cors')
+const parkData = require('./parkData')
 
 const app = express()
 
