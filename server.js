@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const parkData = require('./parkData')
+import parkData from './parkData'
 
 app.set('port', process.env.PORT || 4000)
 app.use(express.json())
