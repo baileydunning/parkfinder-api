@@ -1,13 +1,21 @@
-scripts:
-  start: 'node server.js'
-  test: 'echo "Error: no test specified" && exit 1'
-install:
-- npm install
 language: node_js
 node_js:
-- node
+- 14
+
+before_script:
+- npm i express
+- npm i cors
+
+scripts:
+  start: npm start
+
+branches:
+  only: 
+    - main
+
 notifications:
   email: false
+  
 deploy:
   provider: heroku
   app: parkfinder-api
