@@ -1,4 +1,4 @@
-const parks = {
+const parkData = {
   national: [
     {
       name: 'Acadia',
@@ -498,3 +498,5 @@ const parks = {
     }
   ]
 }
+
+module.exports = parkData
