@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const request = require('request')
 const parkData = require('./parkData')
-
 const app = express()
 
 app.set('port', process.env.PORT || 4000)
@@ -18,7 +17,7 @@ const makeApiCall = (url) => {
   })
 }
 
-app.locals.title = 'Parkfinder API'
+app.locals.title = 'National Parkfinder API'
 app.locals.nationalParks = parkData.national
 
 app.listen(app.get('port'), () => {
