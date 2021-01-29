@@ -29,6 +29,17 @@ app.get('/', (req, res) => {
   res.json({ nationalParks })
 })
 
+app.get('/:parkCode', (req, res) => {
+  const { parkCode } = req.params
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+
+  if (!park) {
+    return res.sendStatus(404)
+  }
+
+  res.status(200).json(park)
+})
+
 app.get('/api/:parkCode', (req, res) => {
   const { parkCode } = req.params
   const url = `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
@@ -43,26 +54,102 @@ app.get('/api/:parkCode', (req, res) => {
     .catch(error => res.send(error))
 })
 
-app.get('/:parkCode', (req, res) => {
+app.get('/api/alerts/:parkCode', (req, res) => {
   const { parkCode } = req.params
+  const url = `https://developer.nps.gov/api/v1/alerts?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
   const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
 
   if (!park) {
     return res.sendStatus(404)
   }
 
-  res.status(200).json(park)
+  makeApiCall(url)
+    .then(response => res.json({ response }))
+    .catch(error => res.send(error))
 })
 
-app.get('/:parkCode/reviews', (request, response) => {
-  const { parkCode } = request.params
+app.get('/api/articles/:parkCode', (req, res) => {
+  const { parkCode } = req.params
+  const url = `https://developer.nps.gov/api/v1/articles?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
   const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
 
   if (!park) {
-    return response.sendStatus(404)
+    return res.sendStatus(404)
   }
 
-  response.status(200).json(park.reviews)
+  makeApiCall(url)
+    .then(response => res.json({ response }))
+    .catch(error => res.send(error))
+})
+
+app.get('/api/campgrounds/:parkCode', (req, res) => {
+  const { parkCode } = req.params
+  const url = `https://developer.nps.gov/api/v1/campgrounds?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+
+  if (!park) {
+    return res.sendStatus(404)
+  }
+
+  makeApiCall(url)
+    .then(response => res.json({ response }))
+    .catch(error => res.send(error))
+})
+
+app.get('/api/lessonplans/:parkCode', (req, res) => {
+  const { parkCode } = req.params
+  const url = `https://developer.nps.gov/api/v1/lessonplans?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+
+  if (!park) {
+    return res.sendStatus(404)
+  }
+
+  makeApiCall(url)
+    .then(response => res.json({ response }))
+    .catch(error => res.send(error))
+})
+
+app.get('/api/places/:parkCode', (req, res) => {
+  const { parkCode } = req.params
+  const url = `https://developer.nps.gov/api/v1/places?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+
+  if (!park) {
+    return res.sendStatus(404)
+  }
+
+  makeApiCall(url)
+    .then(response => res.json({ response }))
+    .catch(error => res.send(error))
+})
+
+app.get('/api/thingstodo/:parkCode', (req, res) => {
+  const { parkCode } = req.params
+  const url = `https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+
+  if (!park) {
+    return res.sendStatus(404)
+  }
+
+  makeApiCall(url)
+    .then(response => res.json({ response }))
+    .catch(error => res.send(error))
+})
+
+app.get('/api/webcams/:parkCode', (req, res) => {
+  const { parkCode } = req.params
+  const url = `https://developer.nps.gov/api/v1/webcams?parkCode=${parkCode}&api_key=C7eGnlc0BVmtjubOSmuD8P6UPmcRfLM4ewoeNBuI`
+  const park = app.locals.nationalParks.find(park => park.parkCode === parkCode)
+
+  if (!park) {
+    return res.sendStatus(404)
+  }
+
+  makeApiCall(url)
+    .then(response => res.json({ response }))
+    .catch(error => res.send(error))
 })
 
 app.post('/:parkCode/reviews', (request, response) => {
