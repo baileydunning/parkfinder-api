@@ -4,6 +4,7 @@
 | ---------------- | ------------------------------------------------------ | ------ | ---------------------------------------- |
 | Get all parks    | https://parkfinder-api.herokuapp.com/                  | GET    | n/a                                      |
 | Get unique park  | https://parkfinder-api.herokuapp.com/:parkCode         | GET    | n/a                                      |
+| Get park from NPS API | https://parkfinder-api.herokuapp.com/api/:parkCode | GET | n/a
 | Get park reviews | https://parkfinder-api.herokuapp.com/:parkCode/reviews | GET    | n/a                                      |
 | Post park review | https://parkfinder-api.herokuapp.com/:parkCode/reviews | POST   | `{name: <string>, parkReview: <string>}` |
 
