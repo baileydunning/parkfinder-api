@@ -3,42 +3,44 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
-    connection: {
-      filename: './dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    client: 'pg',
+    connection: 'postgres://localhost/national_parks',
     migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      directory: './db/migrations'
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
+    useNullAsDefault: true
   }
+
+  // staging: {
+  //   client: 'postgresql',
+  //   connection: {
+  //     database: 'national_parks',
+  //     user:     'username',
+  //     password: 'password'
+  //   },
+  //   pool: {
+  //     min: 2,
+  //     max: 10
+  //   },
+  //   migrations: {
+  //     tableName: 'knex_migrations'
+  //   }
+  // },
+
+  // production: {
+  //   client: 'postgresql',
+  //   connection: {
+  //     database: 'national_parks',
+  //     user:     'username',
+  //     password: 'password'
+  //   },
+  //   pool: {
+  //     min: 2,
+  //     max: 10
+  //   },
+  //   migrations: {
+  //     tableName: 'knex_migrations'
+  //   }
+  // }
 
 };
