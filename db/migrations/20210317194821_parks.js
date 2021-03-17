@@ -1,11 +1,11 @@
 
 exports.up = (knex) => {
-  return knex.scheme
+  return knex.schema
     .createTable('parks', (table) => {
       table.increments('id').primary()
       table.string('name')
       table.string('state')
-      table.string('image')
+      table.text('image')
       table.string('parkCode')
     })
 }
