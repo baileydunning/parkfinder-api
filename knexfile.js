@@ -1,5 +1,4 @@
 module.exports = {
-
   development: {
     client: 'pg',
     connection: 'postgres://localhost/national_parks',
@@ -14,30 +13,17 @@ module.exports = {
 
   staging: {
     client: 'postgresql',
-    connection: {
-      database: 'national_parks'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    connection: 'postgres://localhost/national_parks',
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'parks'
     }
   },
 
   production: {
     client: 'postgresql',
-    connection: {
-      database: 'national_parks'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+    connection: 'postgres://localhost/national_parks',
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'parks'
     }
   }
-
-};
+}
