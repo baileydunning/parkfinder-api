@@ -1,23 +1,24 @@
 # National Parkfinder API
 
-| Description      | URL                                                    | Method | Required Properties                      |
-| ---------------- | ------------------------------------------------------ | ------ | ---------------------------------------- |
-| Get all parks    | https://parkfinder-api.herokuapp.com/api/v1/parks                  | GET    | n/a                                      |
-| Get unique park  | https://parkfinder-api.herokuapp.com/api/v1/parks/:parkCode         | GET    | n/a                                      |
-| Get park from NPS API | https://parkfinder-api.herokuapp.com/api/v1/nps/:parkCode | GET | n/a
-| Get park alerts | https://parkfinder-api.herokuapp.com/api/v1/nps/alerts/:parkCode| GET | n/a
-| Get park articles | https://parkfinder-api.herokuapp.com/api/v1/nps/articles/:parkCode| GET | n/a
-| Get park campgrounds | https://parkfinder-api.herokuapp.com/api/v1/nps/campgrounds/:parkCode| GET | n/a
-| Get park lesson plans | https://parkfinder-api.herokuapp.com/api/v1/nps/lessonplans/:parkCode| GET | n/a
-| Get park places | https://parkfinder-api.herokuapp.com/api/v1/nps/places/:parkCode| GET | n/a
-| Get park things to do | https://parkfinder-api.herokuapp.com/api/v1/nps/thingstodo/:parkCode| GET | n/a
-| Get park webcams | https://parkfinder-api.herokuapp.com/api/v1/nps/webcams/:parkCode| GET | n/a
+| Description      | URL                                                    | Method | 
+| ---------------- | ------------------------------------------------------ | ------ | 
+| Get all parks    | https://parkfinder-api.herokuapp.com/api/v1/parks                  | GET    | 
+| Get unique park  | https://parkfinder-api.herokuapp.com/api/v1/parks/:parkCode         | GET    | 
+| Get park from NPS API | https://parkfinder-api.herokuapp.com/api/v1/nps/:parkCode | GET |
+| Get park alerts | https://parkfinder-api.herokuapp.com/api/v1/nps/alerts/:parkCode| GET | 
+| Get park articles | https://parkfinder-api.herokuapp.com/api/v1/nps/articles/:parkCode| GET | 
+| Get park campgrounds | https://parkfinder-api.herokuapp.com/api/v1/nps/campgrounds/:parkCode| GET | 
+| Get park lesson plans | https://parkfinder-api.herokuapp.com/api/v1/nps/lessonplans/:parkCode| GET | 
+| Get park places | https://parkfinder-api.herokuapp.com/api/v1/nps/places/:parkCode| GET | 
+| Get park things to do | https://parkfinder-api.herokuapp.com/api/v1/nps/thingstodo/:parkCode| GET | 
+| Get park webcams | https://parkfinder-api.herokuapp.com/api/v1/nps/webcams/:parkCode| GET | 
 
 
 
 ## Technologies
-+ Express.js
 + Node.js
++ Express.js
++ Postgres
 + Knex
 
 ## How To Access This Application
