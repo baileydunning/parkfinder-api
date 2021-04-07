@@ -11,19 +11,13 @@ module.exports = {
     useNullAsDefault: true
   },
 
-  staging: {
-    client: 'postgresql',
-    connection: 'postgres://localhost/national_parks',
-    migrations: {
-      tableName: 'parks'
-    }
-  },
-
   production: {
-    client: 'postgresql',
-    connection: 'postgres://localhost/national_parks',
+    client: 'pg',
+    connection: process.env.DB_URL,
+    ssl: true,
     migrations: {
-      tableName: 'parks'
-    }
+      directory: './data/migrations',
+    },
+    seeds: { directory: './data/seeds' }
   }
 }

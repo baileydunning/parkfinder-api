@@ -14,7 +14,7 @@ notifications:
 
 deploy:
   provider: script
-  script: node server.js
+  script: node -r dotenv/config server.js
   
 deploy:
   provider: github
