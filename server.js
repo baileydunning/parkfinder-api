@@ -25,7 +25,6 @@ const makeApiCall = (url) => {
   })
 }
 
-
 app.get('/api/v1/parks', async (req, res) => {
   try {
     const parks = await database('parks').select()

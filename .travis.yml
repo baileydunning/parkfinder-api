@@ -14,10 +14,10 @@ notifications:
 
 deploy:
   provider: script
-  script: node -r dotenv/config server.js
+  script: node -r dotenv/config server.js knexfile.js
   
 deploy:
-  provider: github
+  provider: heroku
   app: parkfinder-api
   skip_cleanup: true
   api_key:
